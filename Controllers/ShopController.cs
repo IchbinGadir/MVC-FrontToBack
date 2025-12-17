@@ -6,6 +6,7 @@ namespace ProniaA.Controllers
     {
         public IActionResult Index()
         {
+
             return View();
         }
         public IActionResult wishlist()

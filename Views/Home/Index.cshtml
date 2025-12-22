@@ -11,7 +11,7 @@
         <div class="swiper-wrapper">
 
 
-            @foreach (var slide in Model.Slides)
+            @foreach (Slide slide in Model.Slides)
             {
                 <div class="swiper-slide animation-style-01">
                     <div class="slide-inner style-1 bg-height"
@@ -152,7 +152,7 @@
                          aria-labelledby="featured-tab">
                         <div class="product-item-wrap row">
 
-                                @foreach (var product in Model.Products)
+                                @foreach (Product product in Model.Products)
                                 {
                                     <div class="col-xl-3 col-md-4 col-sm-6">
                                         <div class="product-item">
@@ -1839,7 +1839,7 @@
                 <div class="swiper-container blog-slider">
                     <div class="swiper-wrapper">
                      
-                            @foreach (var blog in Model.Blogs)
+                            @foreach (Blog blog in Model.Blogs)
                             {
                                 <div class="swiper-slide">
                                     <div class="blog-item">
@@ -1882,6 +1882,6 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
 </div>
 <!-- Blog Area End Here -->

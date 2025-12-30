@@ -13,7 +13,7 @@ namespace ProniaA
             (
                 options =>
                 {
-                    options.UseSqlServer("Server=localhost;Database=FrontToBack;Trusted_Connection=true;Encrypt=false");
+                    options.UseSqlServer("Server=localhost;Database=PironiaDB;Trusted_Connection=true;Encrypt=false");
                 }
             );
 
@@ -21,6 +21,14 @@ namespace ProniaA
 
             var app = builder.Build();
             app.UseStaticFiles();
+
+            app.MapControllerRoute
+            (
+                name: "admin",
+                pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
+            );
+
+
             app.MapControllerRoute
             (
                 name: "default",

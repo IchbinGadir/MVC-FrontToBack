@@ -1,0 +1,18 @@
+﻿@model Category
+
+<div class="card">
+    <div class="card-header">
+        <h4>Category Details</h4>
+    </div>
+
+    <div class="card-body">
+        <p><b>ID:</b> @Model.Id</p>
+        <p><b>Name:</b> @Model.Name</p>
+        <p><b>Created Date:</b> @Model.CreatedAt</p>
+        <p><b>Status:</b> @(Model.IsDelited ? "Deleted" : "Active")</p>
+    </div>
+
+    <div class="card-footer text-end">
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </div>
+</div>

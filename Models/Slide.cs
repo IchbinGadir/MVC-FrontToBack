@@ -1,17 +1,21 @@
-﻿using System.Globalization;
+﻿using ProniaA.Models.Base;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Globalization;
 
 namespace ProniaA.Models
 {
-    public class Slide
+    public class Slide: BaseEntity
     {
 
-        public int Id { get; set; }
+
         public string Title { get; set; }
-        public string Discount { get; set; }
+        public int Discount { get; set; }
         public string Description { get; set; }
-        public string Image { get; set; }
+        public string? Image { get; set; }
         public int Order { get; set; }
 
+        [NotMapped]
+        public IFormFile Photo { get; set; }
 
 
 

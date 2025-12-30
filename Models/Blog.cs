@@ -1,8 +1,8 @@
 ﻿namespace ProniaA.Models
 {
-    public class Blog
+    public class Blog: Base.BaseEntity
     {
-        public int Id { get; set; }
+  
         public string Admin { get; set; }
         public string Date { get; set; }
         public string Title { get; set; }

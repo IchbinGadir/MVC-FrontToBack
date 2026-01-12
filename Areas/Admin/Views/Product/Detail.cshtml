@@ -1,0 +1,44 @@
+﻿@using ProniaA.Areas.Admin.ViewModels.Product
+@model GetProductVM
+<div class="container-fluid">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Product Details</h6>
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    @if (!string.IsNullOrEmpty(Model.Image))
+                    {
+                        <img src="~/assets/images/products/@Model.Image"
+                             class="img-fluid rounded border"
+                             style="width: 100%; object-fit: cover;" />
+                    }
+                    else
+                    {
+                        <div class="alert alert-warning">Şəkil yoxdur</div>
+                    }
+                </div>
+
+                <div class="col-md-8">
+                    <table class="table table-bordered">
+                        <tr>
+                            <th>Name:</th>
+                            <td>@Model.Name</td>
+                        </tr>
+                        <tr>
+                            <th>Price:</th>
+                            <td>$@Model.Price</td>
+                        </tr>
+                        <tr>
+                            <th>Category:</th>
+                            <td>@Model.CategoryName</td>
+                        </tr>
+                    </table>
+
+                    <a asp-action="Index" class="btn btn-secondary mt-3">Back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

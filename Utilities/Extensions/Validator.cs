@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
+﻿using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 using ProniaA.Models;
 using ProniaA.Utilities.Enums;
 using System.Drawing;
@@ -9,7 +10,7 @@ namespace ProniaA.Utilities.Extensions
 {
     public static class Validator
     {
-        public static bool ValidateType(IFormFile formFile, string type)
+        public static bool ValidateType(this IFormFile formFile, string type)
         {
             if (formFile.ContentType.Contains(type))
             {
@@ -58,6 +59,19 @@ namespace ProniaA.Utilities.Extensions
 
 
             return fileName;
+        }
+
+        public static void DeleteFile(this string filename, params string[] roots)
+        {
+            string path = string.Empty;
+            for (int i = 0; i < roots.Length; i++)
+            {
+                path = Path.Combine(path, roots[i]);
+            }
+
+            path = Path.Combine(path, filename);
+
+            File.Delete(path);
         }
     }
 }

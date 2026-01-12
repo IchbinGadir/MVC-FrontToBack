@@ -28,7 +28,7 @@ namespace ProniaA.Controllers
         {
             return View();
         }
-        public IActionResult Detail(int id)
+        public IActionResult Detail(int? id)
         {
 
             if (id == null || id < 1)
